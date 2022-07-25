@@ -1,0 +1,12 @@
+{
+    "/Products/*":{
+        "target": "http://localhost:61929",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/Cliente/*":{
+        "target": "http://localhost:61929",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

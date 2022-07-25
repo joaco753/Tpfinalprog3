@@ -1,0 +1,113 @@
+<h2>Nuevo Producto:  </h2>
+<div *ngIf="alert"  class="alert alert-success" role="alert">
+    El producto fue creado exitosamente!
+</div>
+<hr>
+<div class="row">
+    <div class="col">
+        <form autocomplete="off"
+              (ngSubmit)="guardar()"
+              [formGroup]="miForm">                            
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nombre Producto</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Nombre Producto"
+                         formControlName="nombre"
+                         >
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('nombre')">
+                            Minimo 3 letras
+                        </span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Codigo</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Codigo"
+                         formControlName = "codigo"
+                         >
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('codigo')">
+                            Minimo 3 letras
+                        </span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Tipo Producto</label>
+                <div class="col-sm-9">
+                    <select name="dropdown" 
+                         class="form-control"
+                         formControlName="tipoprod">
+                        <option value=0 selected></option>
+                        <option value=1 >teclado</option>
+                        <option value=2>mouse</option>
+                    </select>                         
+                    <span class="form-text text-danger"
+                    *ngIf="tieneerror('tipoprod')">
+                        Seleccionar Tipo Producto
+                    </span>
+                </div>
+            </div>            
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Stock</label>
+                <div class="col-sm-9">
+                  <input type="number" 
+                         class="form-control" 
+                         placeholder="Ingresar Stock Actual"
+                         formControlName="stock">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('stock')">
+                            Stock Actual mayor o igual que cero
+                         </span>                         
+                </div>
+            </div>            
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                  <input type="number" 
+                         class="form-control" 
+                         placeholder="Ingresar precio"
+                         formControlName="precio">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('precio')">
+                            Precio Minimo mayor o igual que cero
+                        </span>                         
+                </div>
+            </div>  
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Imagen url</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar imagen"
+                         formControlName="imagen"
+                         >
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('imagen')">
+                            Minimo 15 letras
+                        </span>
+                </div>
+            </div>            
+           
+            <div class="row">
+                <div class="col">
+                    <button mat-primary
+                        type="submit"
+                        class="btn btn-primary float-end">
+                        <mat-icon>save</mat-icon>
+                    Guardar
+                </button> 
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+</div>

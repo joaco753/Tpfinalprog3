@@ -1,0 +1,123 @@
+<h2>Ingrese datos del cliente:  </h2>
+<div *ngIf="alert"  class="alert alert-success" role="alert">
+    Venta hecha exitosamente!
+</div>
+
+<hr>
+<div class="row">
+    <div class="col">
+        <form autocomplete="off"
+             (ngSubmit)="guardar()"
+              [formGroup]="miForm">                            
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nombre</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Nombre"
+                         formControlName="nombre"
+                         >
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('nombre')">
+                            Minimo 3 letras
+                        </span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Apellido</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Apellido"
+                         formControlName = "apellido"
+                         >
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('apellido')">
+                            Minimo 3 letras
+                        </span>
+                </div>
+            </div>        
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Razon</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Razon"
+                         formControlName="razon">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('razon')">
+                            Stock Actual mayor o igual que cero
+                         </span>                         
+                </div>
+            </div>            
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Provincia</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Provincia"
+                         formControlName="provincia">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('provincia')">
+                            Precio Minimo mayor o igual que cero
+                        </span>                         
+                </div>
+            </div>          
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Ciudad</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Ciudad"
+                         formControlName="ciudad">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('ciudad')">
+                            Precio Minimo mayor o igual que cero
+                        </span>                         
+                </div>
+            </div>   
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Calle</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Calle"
+                         formControlName="calle">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('calle')">
+                            Precio Minimo mayor o igual que cero
+                        </span>                         
+                </div>
+            </div>   
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Numero Calle</label>
+                <div class="col-sm-9">
+                  <input type="text" 
+                         class="form-control" 
+                         placeholder="Ingresar Numero Calle"
+                         formControlName="numcalle">
+                         <span class="form-text text-danger"
+                         *ngIf="tieneerror('numcalle')">
+                            Precio Minimo mayor o igual que cero
+                        </span>                         
+                </div>
+            </div>  
+            
+           
+            <div class="row">
+                <div class="col">
+                    <button mat-primary
+                        type="submit"
+                        class="btn btn-primary float-end">
+                        <mat-icon>save</mat-icon>
+                        Guardar
+                </button> 
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+</div>
